@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">
+  <br>
+    Shape Editor
+<br>
+</h1>
+
+<p align="center">
+<a href="https://github.com/ajr-dev/shape-editor/fork" target="blank">
+<img src="https://img.shields.io/github/forks/ajr-dev/shape-editor?style=for-the-badge" alt="shape-editor forks"/>
+</a>
+<a href="https://github.com/ajr-dev/shape-editor/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/ajr-dev/shape-editor?style=for-the-badge" alt="shape-editor stars"/>
+</a>
+<a href="https://github.com/ajr-dev/shape-editor/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/ajr-dev/shape-editor?style=for-the-badge" alt="shape-editor pull-requests"/>
+</a>
+</p>
+
+A basic modern, interactive tool for creating and editing CSS clip-path shapes with smooth corners and precise control.
+
+## 🚀 Features
+
+- Interactive shape editing with draggable points
+- Smooth corner rounding with adjustable radius
+- Dark/Light mode support
+- Copy-to-clipboard CSS output
+- Responsive design (although mobile functionality not supported)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ and npm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ajr-dev/shape-editor.git
+cd shape-editor
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the project:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Next.js**: A React framework for server-side rendering and generating static websites.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **shadcn/ui**: A collection of accessible and customizable UI components.
 
-To learn more about Next.js, take a look at the following resources:
+## Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Editor Interface
+![Editor Interface](./editor.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Example Use Case
+![Example Use Case](./example.png)
 
-## Deploy on Vercel
+## 💻 Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Open the Shape Editor in your browser.
+2. Use the draggable points to adjust the shape.
+3. Modify the corner radius for smooth rounding.
+5. Copy the generated CSS clip-path code to your clipboard.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Citation
+
+If you utilize this repository, data in a downstream project, please consider citing it with:
+
+```
+@misc{shape-editor,
+  author = {AJR},
+  title = {A simple tool to make modern clip paths for your designs.},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/ajr-dev/shape-editor}},
+```
+
+## 🌟 Star history
+
+[![Shape Editor Star history Chart](https://api.star-history.com/svg?repos=ajr-dev/shape-editor&type=Date)](https://star-history.com/#ajr-dev/shape-editor&Date)
+
+## License
+
+[MIT License](LICENSE)
+
+## 🤗 Contributors
+
+This is a community project, a special thanks to our contributors! 🤗
+
+<a href="https://github.com/ajr-dev/shape-editor/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ajr-dev/shape-editor" />
+</a>
