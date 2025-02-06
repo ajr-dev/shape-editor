@@ -49,7 +49,7 @@ export function Shape({
 
   const handleContextMenu = (event: React.MouseEvent) => {
     event.preventDefault()
-    const { x, y } = getMousePosition(event)
+    const { x, y } = getMousePosition(event as unknown as MouseEvent)
     onAddPoint(Math.round(x), Math.round(y))
   }
 
