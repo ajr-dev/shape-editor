@@ -100,7 +100,6 @@ export function ControlPanel({
           <ol className="space-y-2 text-sm text-muted-foreground">
             <li>• Drag the circles to adjust the shape</li>
             <li>• Right-click on the shape to add new points</li>
-            <li>• Middle-click on a point to toggle curve direction</li>
             <li>• Toggle rounded corners on/off</li>
             <li>• Adjust corner radius with the slider</li>
             <li>• Hide drag points for preview</li>
