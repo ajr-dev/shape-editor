@@ -18,6 +18,8 @@ interface ControlPanelProps {
   onCornerRadiusChange: (value: number) => void
   clipPath: string
   onReset: () => void
+  snapToGrid: boolean
+  onToggleSnapToGrid: () => void
 }
 
 export function ControlPanel({
@@ -29,6 +31,8 @@ export function ControlPanel({
   onCornerRadiusChange,
   clipPath,
   onReset,
+  snapToGrid,
+  onToggleSnapToGrid,
 }: ControlPanelProps) {
   const [copied, setCopied] = useState(false)
 
@@ -53,6 +57,10 @@ export function ControlPanel({
           <div className="flex items-center justify-between">
             <Label htmlFor="hide-drag-points">Hide drag points</Label>
             <Switch id="hide-drag-points" checked={hideDragPoints} onCheckedChange={onToggleHideDragPoints} />
+          </div>
+          <div className="flex items-center justify-between">
+            <Label htmlFor="snap-to-grid">Snap to grid</Label>
+            <Switch id="snap-to-grid" checked={snapToGrid} onCheckedChange={onToggleSnapToGrid} />
           </div>
           <div className="space-y-2">
             <div className="flex items-center justify-between">
@@ -103,6 +111,7 @@ export function ControlPanel({
             <li>• Toggle rounded corners on/off</li>
             <li>• Adjust corner radius with the slider</li>
             <li>• Hide drag points for preview</li>
+            <li>• Toggle snap to grid for precise alignment</li>
             <li>• Reset shape to default square</li>
             <li>• Copy the generated CSS</li>
           </ol>
@@ -111,4 +120,3 @@ export function ControlPanel({
     </div>
   )
 }
-

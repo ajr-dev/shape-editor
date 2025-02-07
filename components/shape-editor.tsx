@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Shape } from "./shape"
 import { ControlPanel } from "./control-panel"
-import { ThemeToggle } from "./theme-toggle"
 import { Footer } from "./layout/footer"
 import { Header } from "./layout/header"
 
@@ -25,6 +24,7 @@ export function ShapeEditor() {
   const [isRounded, setIsRounded] = useState(false)
   const [hideDragPoints, setHideDragPoints] = useState(false)
   const [cornerRadius, setCornerRadius] = useState(10)
+  const [snapToGrid, setSnapToGrid] = useState(false)
 
   const handlePointDrag = (index: number, x: number, y: number) => {
     const newPoints = [...points]
@@ -117,6 +117,7 @@ export function ShapeEditor() {
                   isRounded={isRounded}
                   hideDragPoints={hideDragPoints}
                   cornerRadius={cornerRadius}
+                  snapToGrid={snapToGrid}
                 />
               </div>
             </div>
@@ -130,6 +131,8 @@ export function ShapeEditor() {
                 onCornerRadiusChange={setCornerRadius}
                 clipPath={`path("${generatePath()}")`}
                 onReset={resetShape}
+                snapToGrid={snapToGrid}
+                onToggleSnapToGrid={() => setSnapToGrid(!snapToGrid)}
               />
             </div>
           </div>
@@ -139,4 +142,3 @@ export function ShapeEditor() {
     </div>
   )
 }
-

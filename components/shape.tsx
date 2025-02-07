@@ -3,6 +3,7 @@
 import type React from "react"
 import { useRef, useEffect } from "react"
 import { useDrag } from "@use-gesture/react"
+import { Grid } from "./editor/grid"
 
 interface ShapeProps {
   points: { x: number; y: number; curveInward?: boolean }[]
@@ -12,6 +13,7 @@ interface ShapeProps {
   isRounded: boolean
   hideDragPoints: boolean
   cornerRadius: number
+  snapToGrid: boolean
 }
 
 export function Shape({
@@ -22,8 +24,18 @@ export function Shape({
   isRounded,
   hideDragPoints,
   cornerRadius,
+  snapToGrid,
 }: ShapeProps) {
   const svgRef = useRef<SVGSVGElement>(null)
+
+  const snapToNearestPoint = (x: number, y: number): { x: number; y: number } => {
+    if (!snapToGrid) return { x, y }
+    const gridSize = 10
+    return {
+      x: Math.round(x / gridSize) * gridSize,
+      y: Math.round(y / gridSize) * gridSize,
+    }
+  }
 
   const getMousePosition = (event: PointerEvent | MouseEvent) => {
     if (!svgRef.current) return { x: 0, y: 0 }
@@ -35,7 +47,8 @@ export function Shape({
 
   const bind = useDrag(({ event, args: [index] }) => {
     const { x, y } = getMousePosition(event as PointerEvent)
-    onPointDrag(index, Math.round(x), Math.round(y))
+    const snappedPosition = snapToNearestPoint(Math.round(x), Math.round(y))
+    onPointDrag(index, snappedPosition.x, snappedPosition.y)
   })
 
   useEffect(() => {
@@ -122,6 +135,7 @@ export function Shape({
         className="rounded-md border border-border bg-background"
         onContextMenu={handleContextMenu}
       >
+        {snapToGrid && <Grid size={10} />}
         <path
           d={generatePath()}
           className="fill-blue-100 dark:fill-blue-950 stroke-blue-500 dark:stroke-blue-400"
