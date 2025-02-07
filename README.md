@@ -24,6 +24,7 @@ A basic modern, interactive tool for creating and editing CSS clip-path shapes w
 - Smooth corner rounding with adjustable radius
 - Dark/Light mode support
 - Copy-to-clipboard CSS output
+- Toggle snap to grid for precise alignment
 - Responsive design (although mobile functionality not supported)
 
 ## Getting Started
